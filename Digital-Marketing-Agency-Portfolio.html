@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Marketing Agency Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#39FF14',secondary:'#0A1F44'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.service-tab.active {
+color: #39FF14;
+border-bottom: 2px solid #39FF14;
+}
+.service-content {
+display: none;
+}
+.service-content.active {
+display: grid;
+}
+.timeline-step::before {
+content: '';
+position: absolute;
+top: 50%;
+left: -50%;
+width: 100%;
+height: 2px;
+background-color: #39FF14;
+z-index: -1;
+}
+.timeline-step:first-child::before {
+display: none;
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 2px solid #0A1F44;
+border-radius: 4px;
+transition: all 0.2s ease;
+}
+.custom-checkbox.checked {
+background-color: #39FF14;
+border-color: #39FF14;
+}
+.custom-checkbox.checked::after {
+content: '';
+position: absolute;
+top: 2px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 26px;
+}
+.custom-switch-track {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e2e8f0;
+border-radius: 34px;
+transition: 0.4s;
+}
+.custom-switch-thumb {
+position: absolute;
+height: 22px;
+width: 22px;
+left: 2px;
+bottom: 2px;
+background-color: white;
+border-radius: 50%;
+transition: 0.4s;
+}
+.custom-switch.checked .custom-switch-track {
+background-color: #39FF14;
+}
+.custom-switch.checked .custom-switch-thumb {
+transform: translateX(24px);
+}
+.custom-radio {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 2px solid #0A1F44;
+border-radius: 50%;
+transition: all 0.2s ease;
+}
+.custom-radio.checked {
+border-color: #39FF14;
+}
+.custom-radio.checked::after {
+content: '';
+position: absolute;
+top: 4px;
+left: 4px;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background-color: #39FF14;
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 6px;
+border-radius: 5px;
+background: #e2e8f0;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #39FF14;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body class="bg-white text-gray-800">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+<div class="container mx-auto px-4 py-4 flex items-center justify-between">
+<a href="#" class="font-['Pacifico'] text-2xl text-secondary">logo</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#about" class="text-secondary hover:text-primary transition-colors font-medium">About</a>
+<a href="#services" class="text-secondary hover:text-primary transition-colors font-medium">Services</a>
+<a href="#process" class="text-secondary hover:text-primary transition-colors font-medium">Process</a>
+<a href="#case-studies" class="text-secondary hover:text-primary transition-colors font-medium">Case Studies</a>
+<a href="#why-us" class="text-secondary hover:text-primary transition-colors font-medium">Why Us</a>
+<a href="#contact" class="text-secondary hover:text-primary transition-colors font-medium">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a href="#contact" class="hidden md:block bg-primary text-secondary px-6 py-2 rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap">Book Consultation</a>
+<button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center text-secondary">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+<div class="container mx-auto px-4 py-2">
+<nav class="flex flex-col space-y-3 py-3">
+<a href="#about" class="text-secondary hover:text-primary transition-colors font-medium py-2">About</a>
+<a href="#services" class="text-secondary hover:text-primary transition-colors font-medium py-2">Services</a>
+<a href="#process" class="text-secondary hover:text-primary transition-colors font-medium py-2">Process</a>
+<a href="#case-studies" class="text-secondary hover:text-primary transition-colors font-medium py-2">Case Studies</a>
+<a href="#why-us" class="text-secondary hover:text-primary transition-colors font-medium py-2">Why Us</a>
+<a href="#contact" class="text-secondary hover:text-primary transition-colors font-medium py-2">Contact</a>
+<a href="#contact" class="bg-primary text-secondary px-6 py-2 rounded-button font-semibold hover:bg-opacity-90 transition-all text-center whitespace-nowrap">Book Consultation</a>
+</nav>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen pt-20 flex items-center bg-gradient-to-br from-secondary via-secondary to-[#001233]">
+<div class="absolute inset-0" style="background-image: url('https://readdy.ai/api/search-image?query=futuristic%20business%20growth%20visualization%20with%20AI%20and%20digital%20marketing%20elements%2C%20showing%20upward%20trending%20graphs%2C%20neural%20networks%2C%20and%20business%20analytics%20in%20a%20modern%20minimalist%20style%20with%20glowing%20neon%20green%20accents%20on%20a%20deep%20blue%20background%2C%208k%20quality%2C%20professional%20corporate%20aesthetic&width=1920&height=1080&seq=2&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.15;"></div>
+<div class="container mx-auto px-4 py-16 relative z-10">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<div class="inline-flex items-center bg-white/10 rounded-full px-4 py-2 mb-6">
+<i class="ri-ai-generate text-primary ri-lg mr-2"></i>
+<span class="text-white text-sm">AI-Powered Marketing Solutions</span>
+</div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">Scale Your Business with AI-Enhanced Digital Marketing</h1>
+<p class="text-xl text-white opacity-90 mb-8 leading-relaxed">Transform your digital presence with our data-driven strategies and AI-powered insights. We help businesses achieve exponential growth through intelligent marketing solutions.</p>
+<div class="flex flex-wrap gap-4 mb-8">
+<a href="#contact" class="group bg-primary text-secondary px-8 py-3 rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap inline-flex items-center">
+Book Free Strategy Session
+<i class="ri-arrow-right-line ml-2 transition-transform group-hover:translate-x-1"></i>
+</a>
+<a href="#case-studies" class="bg-white/10 backdrop-blur text-white px-8 py-3 rounded-button font-semibold hover:bg-white/20 transition-all whitespace-nowrap">View Success Stories</a>
+</div>
+<div class="flex items-center space-x-8">
+<div>
+<p class="text-3xl font-bold text-primary mb-1">93%</p>
+<p class="text-sm text-white/80">Client Retention Rate</p>
+</div>
+<div class="h-8 w-px bg-white/20"></div>
+<div>
+<p class="text-3xl font-bold text-primary mb-1">3.8x</p>
+<p class="text-sm text-white/80">Average ROI Increase</p>
+</div>
+<div class="h-8 w-px bg-white/20"></div>
+<div>
+<p class="text-3xl font-bold text-primary mb-1">24/7</p>
+<p class="text-sm text-white/80">AI-Driven Optimization</p>
+</div>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="absolute -top-20 -right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/5 rounded-xl p-4">
+<i class="ri-robot-line text-primary text-2xl mb-3"></i>
+<h3 class="text-white font-semibold mb-2">AI Analytics</h3>
+<p class="text-white/70 text-sm">Real-time data analysis for optimal performance</p>
+</div>
+<div class="bg-white/5 rounded-xl p-4">
+<i class="ri-line-chart-line text-primary text-2xl mb-3"></i>
+<h3 class="text-white font-semibold mb-2">Growth Metrics</h3>
+<p class="text-white/70 text-sm">Track and optimize your success metrics</p>
+</div>
+<div class="bg-white/5 rounded-xl p-4">
+<i class="ri-customer-service-2-line text-primary text-2xl mb-3"></i>
+<h3 class="text-white font-semibold mb-2">24/7 Support</h3>
+<p class="text-white/70 text-sm">Always-on expert assistance</p>
+</div>
+<div class="bg-white/5 rounded-xl p-4">
+<i class="ri-rocket-line text-primary text-2xl mb-3"></i>
+<h3 class="text-white font-semibold mb-2">Fast Results</h3>
+<p class="text-white/70 text-sm">Quick implementation and scaling</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+<div class="w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-arrow-down-line ri-lg"></i>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section id="about" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">About Us</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h3 class="text-2xl font-bold text-secondary mb-6">Our Mission</h3>
+<p class="text-gray-700 mb-8">We empower businesses to thrive in the digital landscape through data-driven marketing strategies that deliver measurable results. Our team of experts combines creativity with analytics to create campaigns that not only reach your target audience but also convert them into loyal customers.</p>
+<h3 class="text-2xl font-bold text-secondary mb-6">Our Vision</h3>
+<p class="text-gray-700">To be the most trusted digital marketing partner for businesses seeking sustainable growth, recognized for our transparent approach, innovative strategies, and consistent delivery of exceptional ROI.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Value Card 1 -->
+<div class="bg-white p-6 rounded shadow-lg hover:shadow-xl transition-all">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-4 mx-auto">
+<i class="ri-user-heart-line ri-2x"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3 text-center">Client-Centric</h4>
+<p class="text-gray-600 text-center">Your success is our success. We prioritize your business goals and tailor our strategies to meet your specific needs.</p>
+</div>
+<!-- Value Card 2 -->
+<div class="bg-white p-6 rounded shadow-lg hover:shadow-xl transition-all">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-4 mx-auto">
+<i class="ri-bar-chart-line ri-2x"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3 text-center">Data-Driven</h4>
+<p class="text-gray-600 text-center">We make decisions based on data, not assumptions. Every strategy is backed by thorough research and analytics.</p>
+</div>
+<!-- Value Card 3 -->
+<div class="bg-white p-6 rounded shadow-lg hover:shadow-xl transition-all">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-4 mx-auto">
+<i class="ri-rocket-line ri-2x"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3 text-center">Agile</h4>
+<p class="text-gray-600 text-center">The digital landscape evolves rapidly. We adapt quickly to changes and optimize campaigns in real-time.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Our Services</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Comprehensive digital marketing solutions tailored to your business needs. We combine strategy, creativity, and technology to drive results.</p>
+<div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+</div>
+<!-- Service Tabs -->
+<div class="flex flex-wrap justify-center mb-12 border-b border-gray-200">
+<button class="service-tab active px-6 py-3 text-lg font-medium transition-all whitespace-nowrap">Google Ads</button>
+<button class="service-tab px-6 py-3 text-lg font-medium transition-all whitespace-nowrap">Meta Ads</button>
+<button class="service-tab px-6 py-3 text-lg font-medium transition-all whitespace-nowrap">SEO</button>
+<button class="service-tab px-6 py-3 text-lg font-medium transition-all whitespace-nowrap">Social Media</button>
+<button class="service-tab px-6 py-3 text-lg font-medium transition-all whitespace-nowrap">Web Development</button>
+</div>
+<!-- Google Ads Content -->
+<div class="service-content active grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-search-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Search Campaigns</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Target high-intent keywords</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Optimize for conversion rate</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">A/B test ad copy and landing pages</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-image-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Display Advertising</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Visual ads across Google's network</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Audience targeting and retargeting</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Brand awareness campaigns</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-youtube-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">YouTube Advertising</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Engaging video ad formats</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Target viewers based on interests</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Performance tracking and optimization</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Meta Ads Content -->
+<div class="service-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-facebook-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Facebook Ads</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Precise audience targeting</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Engaging visual ad formats</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Conversion-focused campaigns</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-instagram-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Instagram Ads</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Visual storytelling campaigns</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Influencer collaboration strategy</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Shopping and product tagging</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-messenger-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Messenger Ads</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Direct conversation with prospects</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Chatbot integration for lead qualification</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Personalized customer journey</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+<!-- SEO Content -->
+<div class="service-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-file-search-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">On-Page SEO</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Keyword optimization</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Content structure improvement</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Meta tags and schema markup</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-link-m ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Off-Page SEO</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Quality backlink building</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Digital PR and brand mentions</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Social signals optimization</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-code-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Technical SEO</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Site speed optimization</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Mobile-friendly improvements</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Indexation and crawlability fixes</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Social Media Content -->
+<div class="service-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-calendar-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Content Strategy</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Platform-specific content planning</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Content calendar development</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Trend analysis and implementation</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-chat-3-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Community Management</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Engagement and conversation</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Comment moderation and response</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Brand voice consistency</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-line-chart-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Analytics & Reporting</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Performance metrics tracking</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Competitor analysis</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">ROI measurement and reporting</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Web Development Content -->
+<div class="service-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-layout-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Website Design</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Conversion-focused UX/UI design</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Mobile-responsive layouts</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Brand-aligned visual identity</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-code-s-slash-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Web Development</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Custom website development</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">E-commerce solutions</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">CMS implementation (WordPress, etc.)</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-all border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center text-primary mb-6 bg-gray-50 rounded-full">
+<i class="ri-speed-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-4">Performance Optimization</h4>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Page speed improvement</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">Conversion rate optimization</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">•</span>
+<span class="text-gray-700">User experience enhancement</span>
+</li>
+</ul>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+Get Started
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section id="process" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Our Process</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">A systematic approach to digital marketing that ensures consistent results and continuous improvement.</p>
+<div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+</div>
+<div class="hidden md:flex justify-between items-center relative mb-12">
+<div class="absolute left-0 right-0 top-1/2 h-1 bg-gray-200 -z-10"></div>
+<!-- Step 1 -->
+<div class="timeline-step relative z-10 w-64 text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4">
+<i class="ri-search-2-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-2">Discovery</h4>
+<p class="text-gray-600">Understanding your business, goals, audience, and competition.</p>
+</div>
+<!-- Step 2 -->
+<div class="timeline-step relative z-10 w-64 text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4">
+<i class="ri-lightbulb-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-2">Strategy</h4>
+<p class="text-gray-600">Developing a data-driven plan tailored to your specific objectives.</p>
+</div>
+<!-- Step 3 -->
+<div class="timeline-step relative z-10 w-64 text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4">
+<i class="ri-rocket-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-2">Execution</h4>
+<p class="text-gray-600">Implementing campaigns with precision and attention to detail.</p>
+</div>
+<!-- Step 4 -->
+<div class="timeline-step relative z-10 w-64 text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4">
+<i class="ri-line-chart-line ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-2">Optimization</h4>
+<p class="text-gray-600">Continuous analysis and refinement to maximize performance.</p>
+</div>
+</div>
+<!-- Mobile Timeline -->
+<div class="md:hidden space-y-12">
+<!-- Step 1 -->
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mr-4 flex-shrink-0">
+<i class="ri-search-2-line"></i>
+</div>
+<div>
+<h4 class="text-xl font-bold text-secondary mb-2">Discovery</h4>
+<p class="text-gray-600">Understanding your business, goals, audience, and competition.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mr-4 flex-shrink-0">
+<i class="ri-lightbulb-line"></i>
+</div>
+<div>
+<h4 class="text-xl font-bold text-secondary mb-2">Strategy</h4>
+<p class="text-gray-600">Developing a data-driven plan tailored to your specific objectives.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mr-4 flex-shrink-0">
+<i class="ri-rocket-line"></i>
+</div>
+<div>
+<h4 class="text-xl font-bold text-secondary mb-2">Execution</h4>
+<p class="text-gray-600">Implementing campaigns with precision and attention to detail.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mr-4 flex-shrink-0">
+<i class="ri-line-chart-line"></i>
+</div>
+<div>
+<h4 class="text-xl font-bold text-secondary mb-2">Optimization</h4>
+<p class="text-gray-600">Continuous analysis and refinement to maximize performance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies Section -->
+<section id="case-studies" class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Case Studies</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Real results for real businesses. Explore how our strategies have helped clients achieve their goals.</p>
+<div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+</div>
+<div class="relative">
+<div id="case-studies-carousel" class="flex overflow-x-hidden">
+<!-- Case Study 1 -->
+<div class="case-study-slide min-w-full md:min-w-[33.333%] p-4">
+<div class="bg-white rounded shadow-lg overflow-hidden h-full">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="bg-secondary text-white text-sm py-1 px-3 rounded-full">E-commerce</span>
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-shopping-bag-line ri-lg"></i>
+</div>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3">Luxury Fashion Retailer</h4>
+<div class="mb-4">
+<h5 class="font-semibold text-gray-700 mb-1">Challenge:</h5>
+<p class="text-gray-600 text-sm">Low conversion rate and high cart abandonment despite high traffic.</p>
+</div>
+<div class="mb-4">
+<h5 class="font-semibold text-gray-700 mb-1">Solution:</h5>
+<p class="text-gray-600 text-sm">Implemented targeted remarketing campaigns and optimized checkout process.</p>
+</div>
+<div class="mb-6">
+<h5 class="font-semibold text-gray-700 mb-1">Results:</h5>
+<div class="grid grid-cols-3 gap-4 mt-3">
+<div class="text-center">
+<span class="block text-2xl font-bold text-primary">+143%</span>
+<span class="text-xs text-gray-500">Conversion Rate</span>
+</div>
+<div class="text-center">
+<span class="block text-2xl font-bold text-primary">-38%</span>
+<span class="text-xs text-gray-500">Cart Abandonment</span>
+</div>
+<div class="text-center">
+<span class="block text-2xl font-bold text-primary">+87%</span>
+<span class="text-xs text-gray-500">Revenue</span>
+</div>
+</div>
+</div>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+View Full Case Study
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="case-study-slide min-w-full md:min-w-[33.333%] p-4">
+<div class="bg-white rounded shadow-lg overflow-hidden h-full">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="bg-secondary text-white text-sm py-1 px-3 rounded-full">SaaS</span>
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-cloud-line ri-lg"></i>
+</div>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3">B2B Software Platform</h4>
+<div class="mb-4">
+<h5 class="font-semibold text-gray-700 mb-1">Challenge:</h5>
+<p class="text-gray-600 text-sm">High customer acquisition cost and low quality leads.</p>
+</div>
+<div class="mb-4">
+<h5 class="font-semibold text-gray-700 mb-1">Solution:</h5>
+<p class="text-gray-600 text-sm">Refined targeting strategy and implemented content marketing funnel.</p>
+</div>
+<div class="mb-6">
+<h5 class="font-semibold text-gray-700 mb-1">Results:</h5>
+<div class="grid grid-cols-3 gap-4 mt-3">
+<div class="text-center">
+<span class="block text-2xl font-bold text-primary">-42%</span>
+<span class="text-xs text-gray-500">Acquisition Cost</span>
+</div>
+<div class="text-center">
+<span class="block text-2xl font-bold text-primary">+215%</span>
+<span class="text-xs text-gray-500">Lead Quality</span>
+</div>
+<div class="text-center">
+<span class="block text-2xl font-bold text-primary">+68%</span>
+<span class="text-xs text-gray-500">Conversion Rate</span>
+</div>
+</div>
+</div>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+View Full Case Study
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Case Study 3 -->
+<div class="case-study-slide min-w-full md:min-w-[33.333%] p-4">
+<div class="bg-white rounded shadow-lg overflow-hidden h-full">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="bg-secondary text-white text-sm py-1 px-3 rounded-full">Healthcare</span>
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-heart-pulse-line ri-lg"></i>
+</div>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3">Medical Services Provider</h4>
+<div class="mb-4">
+<h5 class="font-semibold text-gray-700 mb-1">Challenge:</h5>
+<p class="text-gray-600 text-sm">Low online visibility and difficulty attracting new patients.</p>
+</div>
+<div class="mb-4">
+<h5 class="font-semibold text-gray-700 mb-1">Solution:</h5>
+<p class="text-gray-600 text-sm">Comprehensive SEO strategy and local search optimization.</p>
+</div>
+<div class="mb-6">
+<h5 class="font-semibold text-gray-700 mb-1">Results:</h5>
+<div class="grid grid-cols-3 gap-4 mt-3">
+<div class="text-center">
+<span class="block text-2xl font-bold text-primary">+326%</span>
+<span class="text-xs text-gray-500">Organic Traffic</span>
+</div>
+<div class="text-center">
+<span class="block text-2xl font-bold text-primary">+184%</span>
+<span class="text-xs text-gray-500">Appointment Bookings</span>
+</div>
+<div class="text-center">
+<span class="block text-2xl font-bold text-primary">Top 3</span>
+<span class="text-xs text-gray-500">Local Rankings</span>
+</div>
+</div>
+</div>
+<a href="#contact" class="text-primary font-medium hover:underline inline-flex items-center">
+View Full Case Study
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Carousel Controls -->
+<div class="flex justify-center mt-8">
+<button id="prev-case-study" class="w-10 h-10 flex items-center justify-center text-secondary hover:text-primary transition-colors">
+<i class="ri-arrow-left-s-line ri-lg"></i>
+</button>
+<div class="flex space-x-2 mx-4">
+<button class="case-study-dot w-3 h-3 rounded-full bg-primary"></button>
+<button class="case-study-dot w-3 h-3 rounded-full bg-gray-300"></button>
+<button class="case-study-dot w-3 h-3 rounded-full bg-gray-300"></button>
+</div>
+<button id="next-case-study" class="w-10 h-10 flex items-center justify-center text-secondary hover:text-primary transition-colors">
+<i class="ri-arrow-right-s-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Testimonial -->
+<div class="mt-16 max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4 flex-shrink-0">
+<i class="ri-double-quotes-l text-primary ri-lg"></i>
+</div>
+<div>
+<p class="text-gray-700 italic mb-4">"Their data-driven approach transformed our digital marketing strategy. We've seen a significant increase in qualified leads and conversions since partnering with them. The team is responsive, transparent, and truly invested in our success."</p>
+<div class="flex items-center">
+<div class="mr-4">
+<h5 class="font-bold text-secondary">Emily Richardson</h5>
+<p class="text-sm text-gray-500">Marketing Director, TechSolutions Inc.</p>
+</div>
+<div class="flex">
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us Section -->
+<section id="why-us" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Why Choose Us</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">What sets us apart from other digital marketing agencies and why our clients trust us with their business.</p>
+<div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+<!-- Reason 1 -->
+<div class="text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-4">
+<i class="ri-award-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3">Specialized Expertise</h4>
+<p class="text-gray-600">Industry-specific knowledge and experience across various digital marketing channels.</p>
+</div>
+<!-- Reason 2 -->
+<div class="text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-4">
+<i class="ri-bubble-chart-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3">Integrated Strategy</h4>
+<p class="text-gray-600">Holistic approach that aligns all marketing channels toward your business objectives.</p>
+</div>
+<!-- Reason 3 -->
+<div class="text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-4">
+<i class="ri-customer-service-2-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3">Direct Communication</h4>
+<p class="text-gray-600">Work directly with senior strategists, not account managers. Clear and transparent communication.</p>
+</div>
+<!-- Reason 4 -->
+<div class="text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-4">
+<i class="ri-funds-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3">ROI-Focused</h4>
+<p class="text-gray-600">Every strategy and tactic is measured against its impact on your bottom line.</p>
+</div>
+<!-- Reason 5 -->
+<div class="text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-4">
+<i class="ri-settings-5-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-bold text-secondary mb-3">Agile Support</h4>
+<p class="text-gray-600">Responsive team that adapts quickly to market changes and new opportunities.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Get In Touch</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Ready to accelerate your business growth? Contact us today for a free strategy consultation.</p>
+<div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+<!-- Contact Form -->
+<div class="bg-white p-8 rounded shadow-lg">
+<h3 class="text-2xl font-bold text-secondary mb-6">Request Your Free Strategy Call</h3>
+<form id="contact-form">
+<div class="mb-6">
+<label for="name" class="block text-gray-700 mb-2">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" required>
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" required>
+</div>
+<div class="mb-6">
+<label for="service" class="block text-gray-700 mb-2">Service Needed</label>
+<div class="relative">
+<select id="service" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:outline-none focus:border-primary pr-8" required>
+<option value="" disabled selected>Select a service</option>
+<option value="google-ads">Google Ads</option>
+<option value="meta-ads">Meta Ads</option>
+<option value="seo">SEO</option>
+<option value="social-media">Social Media</option>
+<option value="web-development">Web Development</option>
+<option value="other">Other</option>
+</select>
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-500"></i>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" required></textarea>
+</div>
+<div class="mb-6 flex items-center">
+<div id="newsletter-checkbox" class="custom-checkbox mr-3"></div>
+<label for="newsletter-checkbox" class="text-gray-700">Subscribe to our newsletter for marketing tips</label>
+</div>
+<button type="submit" class="w-full bg-primary text-secondary px-6 py-3 rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-2xl font-bold text-secondary mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-secondary mb-1">Email Us</h4>
+<a href="mailto:hello@digitalagency.com" class="text-gray-600 hover:text-primary transition-colors">hello@digitalagency.com</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-secondary mb-1">Call Us</h4>
+<a href="tel:+1234567890" class="text-gray-600 hover:text-primary transition-colors">+1 (234) 567-890</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-secondary mb-1">Office Location</h4>
+<p class="text-gray-600">123 Marketing Street, Digital City, DC 10101</p>
+</div>
+</div>
+<div class="pt-6">
+<h4 class="font-semibold text-secondary mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div class="pt-6">
+<h4 class="font-semibold text-secondary mb-4">Business Hours</h4>
+<p class="text-gray-600 mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
+<p class="text-gray-600">Saturday - Sunday: Closed</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-secondary text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Column 1 -->
+<div>
+<a href="#" class="font-['Pacifico'] text-2xl text-white mb-6 block">logo</a>
+<p class="text-gray-300 mb-6">Data-driven digital marketing agency helping businesses achieve sustainable growth through strategic online marketing.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-300 hover:text-primary transition-colors">
+<i class="ri-linkedin-fill ri-lg"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-colors">
+<i class="ri-twitter-fill ri-lg"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-colors">
+<i class="ri-facebook-fill ri-lg"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-primary transition-colors">
+<i class="ri-instagram-fill ri-lg"></i>
+</a>
+</div>
+</div>
+<!-- Column 2 -->
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#about" class="text-gray-300 hover:text-primary transition-colors">About Us</a></li>
+<li><a href="#services" class="text-gray-300 hover:text-primary transition-colors">Services</a></li>
+<li><a href="#case-studies" class="text-gray-300 hover:text-primary transition-colors">Case Studies</a></li>
+<li><a href="#contact" class="text-gray-300 hover:text-primary transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Blog</a></li>
+<li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Careers</a></li>
+</ul>
+</div>
+<!-- Column 3 -->
+<div>
+<h4 class="text-lg font-bold mb-6">Services</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Google Ads</a></li>
+<li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Meta Ads</a></li>
+<li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Search Engine Optimization</a></li>
+<li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Social Media Marketing</a></li>
+<li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Web Development</a></li>
+<li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Content Marketing</a></li>
+</ul>
+</div>
+<!-- Column 4 -->
+<div>
+<h4 class="text-lg font-bold mb-6">Newsletter</h4>
+<p class="text-gray-300 mb-4">Subscribe to our newsletter for the latest marketing tips and insights.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="px-4 py-2 w-full rounded-l border-none focus:outline-none text-gray-800">
+<button type="submit" class="bg-primary text-secondary px-4 py-2 rounded-r font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Subscribe</button>
+</div>
+</form>
+<div class="flex items-center space-x-3">
+<i class="ri-visa-fill text-gray-300 text-2xl"></i>
+<i class="ri-mastercard-fill text-gray-300 text-2xl"></i>
+<i class="ri-paypal-fill text-gray-300 text-2xl"></i>
+<i class="ri-apple-fill text-gray-300 text-2xl"></i>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-700 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Digital Marketing Agency. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Sticky CTA Bubble -->
+<a href="#contact" class="fixed bottom-6 right-6 bg-primary text-secondary w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all z-40">
+<i class="ri-chat-1-line ri-lg"></i>
+</a>
+<!-- Scripts -->
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+if (mobileMenu.classList.contains('hidden')) {
+mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+} else {
+mobileMenuButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+}
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+});
+});
+});
+</script>
+<script id="service-tabs-script">
+document.addEventListener('DOMContentLoaded', function() {
+const serviceTabs = document.querySelectorAll('.service-tab');
+const serviceContents = document.querySelectorAll('.service-content');
+serviceTabs.forEach((tab, index) => {
+tab.addEventListener('click', function() {
+// Remove active class from all tabs and contents
+serviceTabs.forEach(t => t.classList.remove('active'));
+serviceContents.forEach(c => c.classList.remove('active'));
+// Add active class to clicked tab and corresponding content
+tab.classList.add('active');
+serviceContents[index].classList.add('active');
+});
+});
+});
+</script>
+<script id="case-studies-carousel-script">
+document.addEventListener('DOMContentLoaded', function() {
+const carousel = document.getElementById('case-studies-carousel');
+const slides = document.querySelectorAll('.case-study-slide');
+const dots = document.querySelectorAll('.case-study-dot');
+const prevButton = document.getElementById('prev-case-study');
+const nextButton = document.getElementById('next-case-study');
+let currentIndex = 0;
+const totalSlides = slides.length;
+function updateCarousel() {
+// For mobile view (full width slides)
+if (window.innerWidth < 768) {
+carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+// For desktop view (3 slides visible)
+else {
+carousel.style.transform = `translateX(-${currentIndex * 33.333}%)`;
+}
+// Update dots
+dots.forEach((dot, index) => {
+if (index === currentIndex) {
+dot.classList.add('bg-primary');
+dot.classList.remove('bg-gray-300');
+} else {
+dot.classList.remove('bg-primary');
+dot.classList.add('bg-gray-300');
+}
+});
+}
+function goToSlide(index) {
+currentIndex = index;
+if (currentIndex < 0) currentIndex = totalSlides - 1;
+if (currentIndex >= totalSlides) currentIndex = 0;
+updateCarousel();
+}
+// Event listeners
+prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
+nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
+dots.forEach((dot, index) => {
+dot.addEventListener('click', () => goToSlide(index));
+});
+// Handle window resize
+window.addEventListener('resize', updateCarousel);
+// Initialize carousel
+updateCarousel();
+});
+</script>
+<script id="custom-form-elements-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Custom checkbox
+const newsletterCheckbox = document.getElementById('newsletter-checkbox');
+let isChecked = false;
+newsletterCheckbox.addEventListener('click', function() {
+isChecked = !isChecked;
+if (isChecked) {
+this.classList.add('checked');
+} else {
+this.classList.remove('checked');
+}
+});
+// Form submission
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Get form values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const service = document.getElementById('service').value;
+const message = document.getElementById('message').value;
+// Here you would normally send the data to a server
+console.log('Form submitted:', { name, email, service, message, newsletter: isChecked });
+// Show success message
+alert('Thank you for your message! We will get back to you soon.');
+// Reset form
+contactForm.reset();
+isChecked = false;
+newsletterCheckbox.classList.remove('checked');
+});
+});
+</script>
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const headerHeight = document.querySelector('header').offsetHeight;
+const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+window.scrollTo({
+top: targetPosition,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
